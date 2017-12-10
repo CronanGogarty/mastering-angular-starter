@@ -18,7 +18,11 @@ import { Component } from "@angular/core";
         </tbody>
     </table>
     <button type="button" (click)="prevPage()">Prev</button>
-    <button type="button" (click)="nextPage()">Next</button>`,
+    <button type="button" (click)="nextPage()">Next</button>
+    <hr />
+    <h3>{{customPipeMessage | capitilize}}</h3>
+    <div><input type="text" [(ngModel)]="customPipeMessage" /></div>
+    <div><input type="text" [(ngModel)]="customPipeMessage1" /></div>`,
     styles: [ require("./app.component.scss") ],
 })
 export class AppComponent {
@@ -37,6 +41,8 @@ export class AppComponent {
     // }
 
     public header: string = "Pagination Baby!";
+    public customPipeMessage: string = "capitalize custom pipe";
+    public customPipeMessage1: string = "message 2 from custom pipe";
 
     public pageLength: number = 2;
     public currentPage: number = 0;
@@ -84,5 +90,8 @@ export class AppComponent {
             this.currentPage++;
         }
     }
+
+    //////////////////////////////////////////////////////////////////////
+    // custom pipe
 
 }
